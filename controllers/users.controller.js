@@ -43,20 +43,16 @@ exports.findOneUser = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
   const { user } = req;
-  const { name, email, password, role, status } = req.body;
+  const { name, email } = req.body;
 
   await user.update({
     name,
     email,
-    password,
-    role,
-    status,
   });
 
   return res.json({
     status: "success",
     message: "The user has been updated",
-    user,
   });
 };
 

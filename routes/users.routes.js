@@ -14,7 +14,7 @@ router
   .route("/:id")
   .get(usersMiddleware.validExistUser, usersController.findOneUser)
   .patch(
-    usersMiddleware.validUser,
+    usersMiddleware.validUserUpdate,
     usersMiddleware.validExistUser,
     usersController.updateUser
   )

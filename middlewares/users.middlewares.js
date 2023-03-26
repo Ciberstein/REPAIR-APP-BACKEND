@@ -41,6 +41,26 @@ exports.validUser = (req, res, next) => {
   next();
 };
 
+exports.validUserUpdate = (req, res, next) => {
+  const { name, email } = req.body;
+
+  if (!name) {
+    return res.status(400).json({
+      status: "error",
+      message: "the name is required",
+    });
+  }
+
+  if (!email) {
+    return res.status(400).json({
+      status: "error",
+      message: "the email is required",
+    });
+  }
+
+  next();
+};
+
 exports.validExistUser = async (req, res, next) => {
   const { id } = req.params;
 
