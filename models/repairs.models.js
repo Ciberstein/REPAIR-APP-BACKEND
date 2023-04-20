@@ -17,6 +17,14 @@ const Repair = db.define("Repairs", {
     defaultValue: "pending",
     allowNull: false,
   },
+  motorsNumber: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   userId: {
     allowNull: false,
     type: DataTypes.INTEGER,

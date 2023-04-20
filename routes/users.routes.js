@@ -20,4 +20,6 @@ router
   )
   .delete(usersMiddleware.validExistUser, usersController.deleteUser);
 
+router.post("/login", usersController.loginUser);
+
 module.exports = router;
